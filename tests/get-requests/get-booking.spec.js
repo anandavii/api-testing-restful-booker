@@ -45,3 +45,26 @@ test('GET- Get specific booking by booking id 1', async ({ request }) => {
     //log the response
     console.log(responseBody)
 })
+
+test('GET- Get specific booking by first name', async ({ request }) => {
+    const response = await request.get(`/booking`, {
+        params: {
+            firstname: "Susan"
+        }
+    })
+    const responseBody = JSON.parse(await response.text())
+
+    //assert status code 200
+    expect(response.status()).toBe(200)
+    expect(response.ok()).toBe(true)
+
+    //assert schema
+    expect(Array.isArray(responseBody)).toBe(true)
+    expect(responseBody.length).toBeGreaterThan(0)
+
+    expect(responseBody[0]).toHaveProperty('bookingid')
+    expect(typeof responseBody[0].bookingid).toBe('number')
+
+    //log the response
+    console.log(responseBody)
+})
