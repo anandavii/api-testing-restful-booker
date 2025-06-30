@@ -1,0 +1,23 @@
+{
+  "name": "api-testing-restful-booker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandavii/api-testing-restful-booker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anandavii/api-testing-restful-booker/issues"
+  },
+  "homepage": "https://github.com/anandavii/api-testing-restful-booker#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.7"
+  }
+}
