@@ -7,56 +7,89 @@
 
 ## Overview
 
-This is a Playwright-based API Test Automation Framework built using JavaScript. It is designed to validate the [Restful Booker API](https://restful-booker.herokuapp.com/apidoc/index.html), covering core endpoints and schema validations. The framework uses Playwright’s request context to simulate and assert real API behavior.
+This is a Playwright-based API Test Automation Framework built using JavaScript. It is designed to validate REST API endpoints from the [Reqres.in](https://reqres.in/) and [Restful Booker](https://restful-booker.herokuapp.com/apidoc/index.html) APIs. The framework covers authentication, data creation, updates, deletion, and schema validation. The project is ideal for learning, practicing, and showcasing clean API testing practices.
 
 ### Goals of this Framework
 
-- Automate RESTful API workflows using Playwright's `request` fixture
-- Validate all major HTTP methods: GET, POST
-- Perform schema and type-level validations
-- Ensure scalable and readable test structure
-- Build a CI-ready, portfolio-quality testing project
+- Automate REST API workflows using Playwright’s `request` context
+- Validate HTTP methods: GET, POST, PUT, PATCH, DELETE
+- Cover both positive and negative test scenarios
+- Ensure readable, reusable, and scalable test structure
+- Make the project CI-ready and easy to extend
+- Demonstrate best practices like token handling, external test data, and modular helpers
 
 ## What’s Implemented So Far
 
-- **GET Requests**  
-  - Retrieve all booking IDs  
-  - Fetch booking by booking ID  
-  - Filter bookings by first name
+### Reqres API Test Coverage
 
-- **POST Requests**  
-  - Create a new booking  
-  - Validate the created response structure and payload matching
+- **GET Requests**
+  - Get user details and assert fields
+
+- **POST Requests**
+  - Create new user
+  - Successful login
+  - Failed login (missing password)
+  - Successful registration
+
+- **PUT Requests**
+  - Update user name and job, assert updates and timestamp
+
+- **DELETE Requests**
+  - Delete user by ID and assert status code 204
+
+### Restful Booker API Test Coverage
+
+- **GET Requests**
+  - Get all booking IDs
+  - Get booking by ID
+  - Filter bookings by name
+
+- **POST Requests**
+  - Create a booking (using inline and external JSON)
+  - Validate returned booking data
+
+- **PUT Requests**
+  - Update full booking record using token-based authorization
+
+- **PATCH Requests**
+  - Partially update a booking with selective fields
+
+- **DELETE Requests**
+  - Delete a booking using a dynamically created booking and token
+
+- **Token Handling**
+  - Request and reuse authorization tokens from `/auth` for protected endpoints
+
+- **Data Reuse**
+  - Use external `.json` files for payloads
+  - Use utility functions to reduce duplication across tests
 
 ## Usage
 
 1. Install dependencies  
    `npm install`
 
-2. Install Playwright browsers  
-   `npx playwright install`
-
-3. Run all tests  
+2. Run all tests  
    `npx playwright test`
 
-4. View the HTML report  
+3. View the HTML report  
    `npx playwright show-report`
 
 ## Project Details
 
 - Framework: Playwright (JavaScript)
-- Test Type: API Testing (using `request` context)
-- Base API: https://restful-booker.herokuapp.com
-- Language: JavaScript (CommonJS)
+- Test Type: API Testing using `request` context
+- APIs Tested: [Reqres.in](https://reqres.in), [Restful Booker](https://restful-booker.herokuapp.com)
+- Language: JavaScript (CommonJS / ESModule)
 - Runner: Playwright Test
-- Reporting: HTML Reporter (default)
+- Reporting: Built-in HTML Reporter
 
 ## Next Steps
 
-- Add PUT and PATCH tests for updating bookings
-- Add DELETE test to validate booking deletion
-- Introduce token-based authentication for protected routes
-- Add reusable utility for booking creation and token generation
-- Add `.env` support for configurable environments
-- Improve schema validation coverage
+- Add `.env` support for base URLs and secrets
 - Integrate GitHub Actions for CI-based test execution
+- Improve error handling and add edge cases
+- Add data-driven tests using loops or parameterization
+- Explore Allure reporting for detailed analytics
+- Add retry strategies and trace analysis for failed tests
+- Refactor all CRUD logic into reusable helper modules
