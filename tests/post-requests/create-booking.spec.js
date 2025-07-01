@@ -34,5 +34,5 @@ test('POST- Create a new booking', async ({ request }) => {
     expect(responseBody.booking).toMatchObject(bookingPayload)
 
     // log
-    console.log(responseBody)
+    //console.log(responseBody)
 })

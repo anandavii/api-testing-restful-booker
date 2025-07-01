@@ -1,0 +1,11 @@
+{
+    "firstname": "Abhishek",
+    "lastname": "Anand",
+    "totalprice": 1099,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2025-07-01",
+        "checkout": "2025-07-10"
+    },
+    "additionalneeds": "Lunch and Breakfast"
+}
