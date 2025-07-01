@@ -2,6 +2,7 @@
 
 [![Playwright](https://img.shields.io/badge/Playwright-JS-green?logo=playwright&logoColor=white)](https://playwright.dev/)
 ![Node.js version](https://img.shields.io/badge/Node.js->=18-blue)
+![Secrets Managed](https://img.shields.io/badge/.env%20%2B%20Secrets-managed-brightgreen)
 [![Build Status](https://github.com/anandavii/api-testing-restful-booker/actions/workflows/playwright.yml/badge.svg)](https://github.com/anandavii/api-testing-restful-booker/actions/workflows/playwright.yml)
 ![Last commit](https://img.shields.io/github/last-commit/anandavii/api-testing-restful-booker)
 
@@ -14,6 +15,7 @@ This repository contains an API Test Automation Framework built using Playwright
 - Automate complete API workflows using Playwright’s `request` context
 - Validate HTTP methods: GET, POST, PUT, PATCH, DELETE
 - Support token-based authentication and protected endpoint handling
+- Use `.env` for managing secrets and environment-specific values
 - Ensure schema, data, and type validations using `expect().toMatchObject()`
 - Keep test code DRY and modular using helper functions and JSON fixtures
 - Generate rich HTML and Allure reports
@@ -43,12 +45,17 @@ This repository contains an API Test Automation Framework built using Playwright
 - **DELETE Requests**
   - Create and then delete a booking with token
   - Assert status code and empty response
+
 - **Token Handling**
   - Request and reuse authorization tokens from `/auth` for protected endpoints
 
 - **Data Reuse**
   - Use external `.json` files for payloads
   - Use utility functions to reduce duplication across tests
+
+- **Environment Variable Support**
+  - Sensitive values like usernames and passwords are managed using a `.env` file for local runs
+  - GitHub Actions uses **repository secrets** to inject these securely during CI runs
 
 ## Usage
 
@@ -67,6 +74,7 @@ This repository contains an API Test Automation Framework built using Playwright
 - Test Type: REST API Automation
 - APIs Tested: [Restful Booker](https://restful-booker.herokuapp.com)
 - Language: JavaScript (CommonJS / ESModule)
+- Config: .env for local and secrets for CI
 - Runner: Playwright Test Runner
 - Reporting: Allure Reports and Playwright HTML
 
