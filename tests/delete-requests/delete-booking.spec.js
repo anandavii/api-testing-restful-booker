@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import bookingPayload from '../../testdata/createBookingPayload.json'
 
 test('DELETE- Delete a booking', async ({ request }) => {
 
@@ -10,10 +11,18 @@ test('DELETE- Delete a booking', async ({ request }) => {
         }
     })
 
+    // POST request to create a new booking
+    const responseBooking = await request.post(`/booking`, {
+        data: bookingPayload
+    })
+
+    // store the booking id for the new booking created
+    const { bookingid } = await responseBooking.json()
+
     const { token } = await authToken.json()
 
 
-    const response = await request.delete(`/booking/1687`, {
+    const response = await request.delete(`/booking/${bookingid}`, {
         headers: {
             Cookie: `token=${token}`
         },
