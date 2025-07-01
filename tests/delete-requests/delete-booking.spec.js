@@ -13,7 +13,7 @@ test('DELETE- Delete a booking', async ({ request }) => {
     const { token } = await authToken.json()
 
 
-    const response = await request.delete(`/booking/1199`, {
+    const response = await request.delete(`/booking/1437`, {
         headers: {
             Cookie: `token=${token}`
         },
