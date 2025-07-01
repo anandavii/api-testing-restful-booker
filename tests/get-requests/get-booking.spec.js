@@ -18,7 +18,7 @@ test('GET- Get all the booking details', async ({ request }) => {
 
 // make sure to change the booking id which is available in case of failure
 test('GET- Get specific booking by booking id 1', async ({ request }) => {
-    const response = await request.get(`/booking/24`)
+    const response = await request.get(`/booking/245`)
     const responseBody = JSON.parse(await response.text())
 
     //assert status code 200
@@ -44,7 +44,7 @@ test('GET- Get specific booking by booking id 1', async ({ request }) => {
     }
 
     //log the response
-    console.log(responseBody)
+    //console.log(responseBody)
 })
 
 // make sure to change the name which is available in case of failure

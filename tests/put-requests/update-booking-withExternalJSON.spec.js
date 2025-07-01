@@ -10,7 +10,7 @@ test('PUT- Update the booking details using JSON from external File', async ({ r
     })
 
     //log the new booking
-    console.log(await response.json())
+    //console.log(await response.json())
 
     // store the booking id for the new booking created
     const { bookingid } = await response.json()
