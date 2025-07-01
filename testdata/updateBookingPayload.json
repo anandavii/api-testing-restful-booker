@@ -1,0 +1,11 @@
+{
+    "firstname": "Abhishek-updated",
+    "lastname": "Anand-updated",
+    "totalprice": 222,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2025-07-10",
+        "checkout": "2025-07-15"
+    },
+    "additionalneeds": "Breakfast and everything updated"
+}
