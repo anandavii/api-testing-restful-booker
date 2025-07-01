@@ -7,7 +7,7 @@
 
 ## Overview
 
-This is a Playwright-based API Test Automation Framework built using JavaScript. It is designed to validate REST API endpoints from the [Reqres.in](https://reqres.in/) and [Restful Booker](https://restful-booker.herokuapp.com/apidoc/index.html) APIs. The framework covers authentication, data creation, updates, deletion, and schema validation. The project is ideal for learning, practicing, and showcasing clean API testing practices.
+This is a Playwright-based API Test Automation Framework built using JavaScript. It is designed to validate REST API endpoints from the [Restful Booker](https://restful-booker.herokuapp.com/apidoc/index.html) APIs. The framework covers authentication, data creation, updates, deletion, and schema validation. The project is ideal for learning, practicing, and showcasing clean API testing practices.
 
 ### Goals of this Framework
 
