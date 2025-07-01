@@ -7,39 +7,42 @@
 
 ## Overview
 
-This is a Playwright-based API Test Automation Framework built using JavaScript. It is designed to validate REST API endpoints from the [Restful Booker](https://restful-booker.herokuapp.com/apidoc/index.html) APIs. The framework covers authentication, data creation, updates, deletion, and schema validation. The project is ideal for learning, practicing, and showcasing clean API testing practices.
+This repository contains an API Test Automation Framework built using Playwright and JavaScript to test the Restful Booker API. It includes full coverage of key REST operations such as authentication, booking creation, updates, deletions, and schema validations. The project is structured for clarity and maintainability, with reusable helpers, external JSON payloads, and integration with GitHub Actions for CI.
 
 ### Goals of this Framework
 
-- Automate REST API workflows using Playwright’s `request` context
+- Automate complete API workflows using Playwright’s `request` context
 - Validate HTTP methods: GET, POST, PUT, PATCH, DELETE
-- Cover both positive and negative test scenarios
-- Ensure readable, reusable, and scalable test structure
-- Make the project CI-ready and easy to extend
-- Demonstrate best practices like token handling, external test data, and modular helpers
+- Support token-based authentication and protected endpoint handling
+- Ensure schema, data, and type validations using `expect().toMatchObject()`
+- Keep test code DRY and modular using helper functions and JSON fixtures
+- Generate rich HTML and Allure reports
+- Enable GitHub Actions for continuous integration
 
 ## What’s Implemented So Far
 
 ### Restful Booker API Test Coverage
 
 - **GET Requests**
-  - Get all booking IDs
+  - Fetch all booking IDs
   - Get booking by ID
   - Filter bookings by name
 
 - **POST Requests**
-  - Create a booking (using inline and external JSON)
-  - Validate returned booking data
+  - Create a new booking (using inline and external JSON)
+  - Assert structure and values in response
 
 - **PUT Requests**
-  - Update full booking record using token-based authorization
+  - Update booking fully using `PUT` with auth token
+  - Validations done using external JSON payload
 
 - **PATCH Requests**
   - Partially update a booking with selective fields
+  - Assert only changed fields, leave rest untouched
 
 - **DELETE Requests**
-  - Delete a booking using a dynamically created booking and token
-
+  - Create and then delete a booking with token
+  - Assert status code and empty response
 - **Token Handling**
   - Request and reuse authorization tokens from `/auth` for protected endpoints
 
@@ -58,14 +61,14 @@ This is a Playwright-based API Test Automation Framework built using JavaScript.
 3. View the HTML report  
    `npx playwright show-report`
 
-## Project Details
+## Project Highlights
 
 - Framework: Playwright (JavaScript)
-- Test Type: API Testing using `request` context
+- Test Type: REST API Automation
 - APIs Tested: [Restful Booker](https://restful-booker.herokuapp.com)
 - Language: JavaScript (CommonJS / ESModule)
-- Runner: Playwright Test
-- Reporting: Allure Reports
+- Runner: Playwright Test Runner
+- Reporting: Allure Reports and Playwright HTML
 
 <h2> Allure Reports <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" alt="Allure" height="20"/></h2>
 
@@ -100,9 +103,6 @@ This project uses GitHub Actions for **automated test execution** and **manual w
 ## Next Steps
 
 - Add `.env` support for base URLs and secrets
-- Integrate GitHub Actions for CI-based test execution
 - Improve error handling and add edge cases
-- Add data-driven tests using loops or parameterization
-- Explore Allure reporting for detailed analytics
 - Add retry strategies and trace analysis for failed tests
 - Refactor all CRUD logic into reusable helper modules
