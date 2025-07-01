@@ -51,7 +51,7 @@ test('GET- Get specific booking by booking id 1', async ({ request }) => {
 test('GET- Get specific booking by first name', async ({ request }) => {
     const response = await request.get(`/booking`, {
         params: {
-            firstname: "Susan"
+            firstname: "Sally"
         }
     })
     const responseBody = JSON.parse(await response.text())
