@@ -82,7 +82,30 @@ This is a Playwright-based API Test Automation Framework built using JavaScript.
 - APIs Tested: [Restful Booker](https://restful-booker.herokuapp.com)
 - Language: JavaScript (CommonJS / ESModule)
 - Runner: Playwright Test
-- Reporting: Built-in HTML Reporter
+- Reporting: Allure Reports
+
+<h2> Allure Reports <img src="https://avatars.githubusercontent.com/u/5879127?s=200&v=4" alt="Allure" height="20"/></h2>
+
+### Step 1: Use the following command to generate the Allure report:
+``` bash
+    allure generate target/allure-results --clean -o allure-report
+```
+
+- This command will create a detailed HTML report in the `allure-report` directory.
+
+### Step 2: To view the report in your browser, use:
+
+``` bash
+    allure serve target/allure-results
+```
+
+- This will start a local server and open the Allure report in your default browser.
+
+> To clear previous results:
+
+``` bash
+    rm -rf target/allure-results
+```
 
 ## GitHub Actions CI
 This project uses GitHub Actions for **automated test execution** and **manual workflow triggering**.
