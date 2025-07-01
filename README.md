@@ -20,23 +20,6 @@ This is a Playwright-based API Test Automation Framework built using JavaScript.
 
 ## What’s Implemented So Far
 
-### Reqres API Test Coverage
-
-- **GET Requests**
-  - Get user details and assert fields
-
-- **POST Requests**
-  - Create new user
-  - Successful login
-  - Failed login (missing password)
-  - Successful registration
-
-- **PUT Requests**
-  - Update user name and job, assert updates and timestamp
-
-- **DELETE Requests**
-  - Delete user by ID and assert status code 204
-
 ### Restful Booker API Test Coverage
 
 - **GET Requests**
