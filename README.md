@@ -79,10 +79,17 @@ This is a Playwright-based API Test Automation Framework built using JavaScript.
 
 - Framework: Playwright (JavaScript)
 - Test Type: API Testing using `request` context
-- APIs Tested: [Reqres.in](https://reqres.in), [Restful Booker](https://restful-booker.herokuapp.com)
+- APIs Tested: [Restful Booker](https://restful-booker.herokuapp.com)
 - Language: JavaScript (CommonJS / ESModule)
 - Runner: Playwright Test
 - Reporting: Built-in HTML Reporter
+
+## GitHub Actions CI
+This project uses GitHub Actions for **automated test execution** and **manual workflow triggering**.
+
+- The GitHub Actions workflow (`.github/workflows/playwright.yml`) is configured with `workflow_dispatch` to support **manual test runs**.
+- Supports manual trigger of workflow from the GitHub Actions tab by clicking the “Run workflow” button.
+- Automatic triggers on `push` and `pull_request` is added for automatic workflow runs.
 
 ## Next Steps
 
