@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test'
 import bookingPayload from '../../testdata/createBookingPayload.json'
+require('dotenv').config()
 
 test('DELETE- Delete a booking', async ({ request }) => {
 
     //get auth code
     const authToken = await request.post(`/auth`, {
         data: {
-            "username": "admin",
-            "password": "password123"
+            "username": process.env.AUTH_USERNAME,
+            "password": process.env.AUTH_PASSWORD
         }
     })
 

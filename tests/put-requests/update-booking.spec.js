@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+require('dotenv').config()
 
 test('PUT- Update the booking details', async ({ request }) => {
     const bookingPayload = {
@@ -24,12 +25,13 @@ test('PUT- Update the booking details', async ({ request }) => {
     // now get the auth token
     const authRes = await request.post(`/auth`, {
         data: {
-            username: 'admin',
-            password: 'password123'
+            username: process.env.AUTH_USERNAME,
+            password: process.env.AUTH_PASSWORD,
         }
     })
 
     // store the auth token
+    const authResBody = await authRes.json()
     const { token } = await authRes.json()
 
     //update the booking

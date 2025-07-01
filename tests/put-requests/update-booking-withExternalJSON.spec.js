@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test'
 import bookingPayload from '../../testdata/createBookingPayload.json'
 import updateBookingPayload from '../../testdata/updateBookingPayload.json'
+require('dotenv').config()
 
 test('PUT- Update the booking details using JSON from external File', async ({ request }) => {
 
@@ -18,8 +19,8 @@ test('PUT- Update the booking details using JSON from external File', async ({ r
     // now get the auth token
     const authRes = await request.post(`/auth`, {
         data: {
-            username: 'admin',
-            password: 'password123'
+            username: process.env.AUTH_USERNAME,
+            password: process.env.AUTH_PASSWORD,
         }
     })
 
